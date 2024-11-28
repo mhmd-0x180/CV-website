@@ -1,0 +1,255 @@
+<html><head><base href="." /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV</title>
+<style>
+:root {
+  --primary: #2c3e50;
+  --secondary: #3498db;
+  --light: #ecf0f1;
+  --text: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+}
+
+.skill-bars {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-bar {
+  background: #eee;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--secondary);
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--secondary);
+  padding-left: 20px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--secondary);
+  position: absolute;
+  left: -7px;
+  border-radius: 50%;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--light);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="container profile">
+    <svg class="profile-image" width="150" height="150" viewBox="0 0 150 150">
+      <circle cx="75" cy="75" r="70" fill="#3498db"/>
+      <circle cx="75" cy="60" r="25" fill="#ecf0f1"/>
+      <path d="M75 95 Q75 120 115 125 A70 70 0 1 1 35 125 Q75 120 75 95" fill="#ecf0f1"/>
+    </svg>
+    <div>
+      <h1>Mohamed Baqer</h1>
+      <h2>Computer Engineering Student</h2>
+      <p>Passionate about creating elegant solutions to complex problems</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2>Professional Summary</h2>
+    <p>4+ years of experience in C++ development with expertise in low level stuff and memory management.<br/>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skill-bars">
+      <div>
+        <label>C++</label>
+        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+      </div>
+      <div>
+        <label>Python</label>
+        <div class="skill-bar"><div class="skill-progress" data-width="40"></div></div>
+      </div>
+      <div>
+        <label>C#</label>
+        <div class="skill-bar"><div class="skill-progress" data-width="25"></div></div>
+      </div>
+      <div>
+        <label>HTML CSS JavaScript</label>
+        <div class="skill-bar"><div class="skill-progress" data-width="25"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Senior Software Engineer - Tech Corp</h3>
+        <p>2018 - Present</p>
+        <p>Led development of cloud-based solutions, managed team of 5 developers</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Software Engineer - Innovation Inc</h3>
+        <p>2015 - 2018</p>
+        <p>Developed scalable web applications using React and Node.js</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Junior Developer - StartUp Ltd</h3>
+        <p>2012 - 2015</p>
+        <p>Full-stack development using MEAN stack</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div class="contact-card">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,5L4,8V6l8,5l8-5V8z"/>
+        </svg>
+        <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+      </div>
+      <div class="contact-card">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/>
+        </svg>
+        <span>Karbala</span>
+      </div>
+      <div class="contact-card">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3z M9,17H6.5v-7h2.5V17z M7.7,8.7c-0.8,0-1.4-0.6-1.4-1.4s0.6-1.4,1.4-1.4s1.4,0.6,1.4,1.4S8.5,8.7,7.7,8.7z M18,17h-2.5v-4c0-1.1-0.9-2-2-2s-2,0.9-2,2v4H9v-7h2.5v1.2c0.7-0.7,1.7-1.2,2.7-1.2c2.1,0,3.8,1.7,3.8,3.8V17z"/>
+        </svg>
+        <a href="https://linkedin.com/in/johndoe">linkedin.com/in/johndoe</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate skill bars
+  const skills = document.querySelectorAll('.skill-progress');
+  skills.forEach(skill => {
+    const width = skill.getAttribute('data-width');
+    setTimeout(() => {
+      skill.style.width = width + '%';
+    }, 300);
+  });
+
+  // Add intersection observer for sections
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(section);
+  });
+});
+</script>
+
+</body></html>
